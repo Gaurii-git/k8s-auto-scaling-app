@@ -1,14 +1,14 @@
+version: '3.9'
+
 services:
-      nginx:
-        image: nginx:latest
-        container_name: my_first_nginx
-        ports:
-             - 5000-80
+  nginx:
+    image: nginx:latest
+    container_name: my_first_nginx
+    ports:
+      - "5000:80"
 
-      mynewapache:
-        image: ubuntu/apache2:latest
-        container_name: my_first_apache
-        ports:
-              - 5001-80
-
-
+  mynewapache:
+    image: httpd:latest
+    container_name: my_first_apache
+    ports:
+      - "5001:80"
