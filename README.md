@@ -1,70 +1,66 @@
-# Getting Started with Create React App
+# Containerized Application Deployment with Kubernetes (Minikube / AWS)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project demonstrates deployment of a **containerized application** using Kubernetes to achieve **scalability**, **high availability**, and **efficient load balancing**. The application is packaged using Docker and orchestrated using Kubernetes on Minikube (local) and AWS (cloud).
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- **Containerized Deployment**
+  - Built Docker images for the application.
+  - Deployed containers as Kubernetes Pods and Deployments.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Kubernetes Orchestration**
+  - Managed application lifecycle using Deployments.
+  - Ensured desired state with Kubernetes controllers.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Service Exposure**
+  - Configured Kubernetes Services to expose the application externally.
 
-### `npm test`
+- **Auto Scaling**
+  - Implemented Horizontal Pod Autoscaler (HPA) to scale pods based on resource usage.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Load Balancing**
+  - Distributed traffic across multiple pods for better performance.
 
-### `npm run build`
+- **Self-Healing**
+  - Kubernetes automatically restarts failed containers and maintains availability.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Technologies Used
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **Docker** – Containerization of application
+- **Kubernetes** – Container orchestration
+- **Minikube** – Local Kubernetes cluster
+- **AWS** – Cloud deployment
+- **Kubectl** – Kubernetes CLI tool
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Project Structure
+├── Dockerfile # Docker image configuration
+├── deployment.yaml # Kubernetes Deployment configuration
+├── service.yaml # Kubernetes Service configuration
+├── hpa.yaml # Horizontal Pod Autoscaler configuration
+├── app/ # Application source code
+└── README.md # Project documentation
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Prerequisites
 
-## Learn More
+- Docker installed
+- Kubernetes CLI (kubectl)
+- Minikube (for local setup)
+- AWS account (for cloud deployment)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Setup & Deployment
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### 1. Clone the Repository
+```bash
+git clone <your-repo-url>
+cd <your-repo-folder>
